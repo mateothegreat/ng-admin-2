@@ -1,0 +1,311 @@
+@media(min-width:769px) {
+    .horizontal-nav {
+        /*This is for the navigation*/
+        .left-sidebar {
+            width: 100%;
+            height: auto;
+            
+            padding-top: 0px;
+        }
+        .scroll-sidebar{
+            height: auto;
+        }
+        .sidebar-nav {
+            padding: 0px 15px;
+           
+            #sidebarnav {
+                display: flex;
+                li {
+                    position: relative;
+                    a {
+                        padding:12px 15px;
+                    }
+                }
+                >li {
+                    display: inline-block;
+                    margin-bottom: 0px;
+                    margin-top: 0px;
+                    &:hover > a{
+                        background: $sidebar-alt;
+                    }
+                    &:last-child > ul {
+                        right: 0px;
+                        left: auto;
+                    }
+                    > a{
+                        padding:17px 15px;
+                    }
+                    > a.two-column + ul{
+                        width: 400px;
+                        > li{
+                            display: inline-block;
+                            width: 49%;
+                            vertical-align: top;
+                        }
+                    }
+                }
+                > li > ul {
+                    position: absolute;
+                    left: 0px;
+                    top: 58px;
+                    width: 220px;
+                    max-height: 350px;
+                    overflow-y: auto;
+                    padding-bottom: 10px;
+                    z-index: 1001;
+                    background: $sidebar-alt;
+                    display: none;
+                    padding-left: 1px;
+                   
+                }
+                > li:hover > ul {
+                    height: auto !important;
+                    overflow: auto;
+                }
+                > li:hover > ul,
+                > li:hover > ul.collapse {
+                    display: block;
+                }
+                > li > a.has-arrow:after {
+                    display: none;
+                }
+                .nav-small-cap,
+                .sidebar-footer,
+                .user-profile .profile-text,
+                >.label {
+                    display: none;
+                }
+            }
+        }
+        .navbar-header{
+            padding-left: 15px;
+        }
+        /*This is for the page wrapper*/
+        .page-wrapper{
+            margin-left:0px; 
+            
+        }  
+        .footer{
+            left: 0px;
+        }
+        .page-titles{
+            background: transparent!important;
+            box-shadow: none;
+            padding: 22px 0px;
+            margin: 0 -15px;
+        }
+    }
+    
+}
+
+@media(min-width:1400px) {
+    .boxed{
+        .topbar .top-navbar, .sidebar-nav, .container-fluid, .page-titles{
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .footer{
+            text-align: center;
+        }
+    }
+}
+
+/*******************
+Fixed -sidebar
+******************/
+
+.fixed-sidebar{
+    .left-sidebar, .navbar-header{
+        position: fixed;
+    }
+    .navbar-collapse{
+        margin-left: 220px;
+    }
+    &.mini-sidebar{
+        .navbar-collapse, .footer{
+            margin-left: 70px;
+        }
+        
+    }
+}
+
+/*******************
+Fixed -Header
+******************/
+@media(min-width:769px) {
+.fixed-header{
+    .topbar{
+        position: fixed;
+        width: 100%; 
+    }
+    .page-wrapper{
+        padding-top: 60px;
+    }
+}
+.fixed-layout{
+    .left-sidebar, .topbar{
+        position: fixed;
+    }
+    .left-sidebar{
+        top:62px;
+    }
+    .topbar{
+        width: 100%;
+    }
+    .page-wrapper{
+        padding-top: 120px;
+    }
+}
+}
+@media(max-width:769px) {
+   .fixed-layout{
+    .left-sidebar, .topbar{
+        position: fixed;
+    }
+    .left-sidebar{
+       overflow: auto;
+       padding-bottom: 60px;
+    }   
+    .topbar{
+        width: 100%;
+    }
+    .page-wrapper{
+        padding-top: 62px;
+    }
+} 
+}
+/*******************
+This is for the minisidebar
+******************/
+
+.mini-sidebar .top-navbar {
+    .navbar-header {
+        width: 62px;
+    }
+}
+
+
+/****************
+When click on sidebar toggler and also for tablet
+*****************/
+.mini-sidebar {
+    .navbar-brand span{
+        display: none;
+    }
+}
+@media(min-width:768px) {
+    .mini-sidebar {
+        .navbar-brand span{
+            display: none;
+        }
+        .sidebar-nav #sidebarnav {
+            li {
+                position: relative;
+            }
+            > li > ul {
+                position: absolute;
+                left: 60px;
+                top: 45px;
+                width: 220px;
+                padding-bottom: 10px;
+                z-index: 1001;
+                background: $sidebar-alt;
+                display: none;
+                padding-left: 1px;
+            }
+            > li:hover > ul {
+                height: auto !important;
+                overflow: auto;
+            }
+            > li:hover > ul,
+            > li:hover > ul.collapse {
+                display: block;
+            }
+            > li > a.has-arrow:after {
+                display: none;
+            }
+        }
+        .user-profile .profile-img {
+            width: 50px;
+            .setpos {
+                top: -35px;
+            }
+        }
+        &.fix-sidebar .left-sidebar {
+            position: fixed;
+        }
+    }
+    .mini-sidebar {
+        .left-sidebar {
+            width: 60px;
+        }
+        .user-profile {
+            padding-bottom: 15px;
+            width: 60px;
+            margin-bottom: 7px;
+            .profile-img {
+                padding: 15px 0 0 0;
+                &:before {
+                    top: 15px;
+                }
+            }
+        }
+        .scroll-sidebar {
+            padding-bottom: 0px;
+            position: absolute;
+        }
+        .hide-menu,
+        .nav-small-cap,
+        .sidebar-footer,
+        .user-profile .profile-text,
+        >.label {
+            display: none;
+        }
+        .nav-devider {
+            width: 60px;
+        }
+        .sidebar-nav {
+            background: transparent;
+        }
+        .sidebar-nav #sidebarnav > li > a {
+            padding: 12px 13px 12px 18px;
+            width: 60px;
+        }
+        .sidebar-nav #sidebarnav > li:hover > a {
+            width: 280px;
+            background: $sidebar-alt;
+            .hide-menu {
+                display: inline;
+            }
+            .label {
+                display: none;
+            }
+        }
+    }
+}
+
+@media(max-width:767px) {
+    .mini-sidebar {
+            .left-sidebar,
+            .sidebar-footer {
+                left: -240px;
+            }
+        
+    }
+}
+
+
+/*******************
+This is for the Logo in center
+******************/
+
+.logo-center {
+    .top-navbar {
+        .navbar-header {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+    }
+}
